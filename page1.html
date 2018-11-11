@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Page A </title>
+ <style type="text/css">
+   span.s1	{
+     font-style: italic;
+		 color: purple } 
+ </style>
+
+ <script type="text/javascript">
+    function validate(f)  {
+	  var t1=0;
+	
+    if (f=="")  {
+      document.getElementById("infousername").className="s1";
+      document.getElementById("infousername").innerHTML = "This field is required! ";
+      t1=1;
+    } 
+
+    if (t1==1) return false;
+    else return true;
+
+   }
+ </script>
+</head>
+<body>
+   <form name="myForm" action="page2.php" method="POST" onsubmit="return validate(this)">
+
+      <label> Enter your name: </label>  <input type="text" name="username" id="username"/>
+      <span id="infoUsername" name="infoUsername">  </span>
+
+      <br /> 
+
+      <label> Choose the quiz paper: </label>
+   	    <input type="radio" name="quiz" value="1" checked /> 1
+	      <input type="radio" name="quiz" value="2" /> 2
+ 
+      <br />
+
+      <input type="submit" value="submit" />
+   </form>
+
+</body>
+</html>
